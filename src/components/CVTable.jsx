@@ -1,4 +1,4 @@
-function CVTable() {
+function CVTable({ values }) {
   return (
     <div>
       <div className="cv-general-container border-bottom-container">
@@ -8,9 +8,9 @@ function CVTable() {
           <p>Phone</p>
         </div>
         <div className="cv-general-values-container padding-container">
-          <p>Dmitrijus Byckovas</p>
-          <p>dmitrijus.byckovas@outlook.com</p>
-          <p>+37068350550</p>
+          <p>{values.name}</p>
+          <p>{values.email}</p>
+          <p>{values.phone}</p>
         </div>
         <div className="cv-general-picture-container padding-container">
           <h1>picture</h1>
