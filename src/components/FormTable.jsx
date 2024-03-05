@@ -15,7 +15,7 @@ function FormTable() {
       id: 1,
       name: 'name',
       type: 'text',
-      placeholder: 'name',
+      placeholder: 'First and Last Name',
       label: 'Name',
     },
     {
@@ -37,21 +37,30 @@ function FormTable() {
   const handleChangeValues = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   console.log(values);
   return (
     <div>
-      {GeneralInformationInputs.map((input) => (
-        <GeneralInformation
-          key={input.id}
-          label={input.label}
-          name={input.name}
-          type={input.type}
-          placeholder={input.placeholder}
-          value={values[input.name]}
-          onChange={handleChangeValues}
-        />
-      ))}
-      <button>Submit</button>
+      <h1 className="header-v1">General Information</h1>
+      <div className="formInputTable">
+        {GeneralInformationInputs.map((input) => (
+          <GeneralInformation
+            key={input.id}
+            label={input.label}
+            name={input.name}
+            type={input.type}
+            placeholder={input.placeholder}
+            value={values[input.name]}
+            onChange={handleChangeValues}
+          />
+        ))}
+      </div>
+      <h1 className="header-v1">Educational Experience</h1>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
