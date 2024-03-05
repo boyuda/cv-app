@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import GeneralInformation from './GeneralInformation';
+import { GeneralInformationInputs } from './data';
 
 //Storing all of the form data in to an object.
 function FormTable() {
@@ -10,39 +11,19 @@ function FormTable() {
   });
 
   //Possible inputs in each section
-  const GeneralInformationInputs = [
-    {
-      id: 1,
-      name: 'name',
-      type: 'text',
-      placeholder: 'First and Last Name',
-      label: 'Name',
-    },
-    {
-      id: 2,
-      name: 'email',
-      type: 'text',
-      placeholder: 'Email',
-      label: 'Email',
-    },
-    {
-      id: 3,
-      name: 'phone',
-      type: 'text',
-      placeholder: 'Phone',
-      label: 'Phone',
-    },
-  ];
 
+  //////////////////////////////////
+  ////////Handlers
+  /////////////////////////////////
   const handleChangeValues = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //TODO:When submit button clicked transfer everything to the CVTable
   };
 
-  console.log(values);
   return (
     <div>
       <h1 className="header-v1">General Information</h1>

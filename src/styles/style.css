@@ -1,28 +1,40 @@
 .formInputTable {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .formInput {
   display: flex;
-  gap: 0.5rem;
+  justify-content: space-around;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.container-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  border: 1px solid black;
+  gap: 40px;
 }
 
 .header-v1 {
   text-align: center;
   font-weight: 700;
   font-size: 25px;
+}
+
+.cv-general-container {
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+}
+
+.cv-general-picture-container {
+  justify-self: center;
+}
+
+.border-bottom-container {
+  border-bottom: 2px solid black;
+}
+
+.padding-container {
+  padding: 10px;
 }
