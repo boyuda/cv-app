@@ -1,7 +1,10 @@
 function CVTable({ values }) {
   return (
     <div>
-      <div className="cv-general-container border-bottom-container">
+      <div className="cv-general-container">
+        <div className="cv-general-picture-container padding-container">
+          <h1>picture</h1>
+        </div>
         <div className="cv-general-info-container padding-container">
           <p>Name</p>
           <p>Email</p>
@@ -12,9 +15,9 @@ function CVTable({ values }) {
           <p>{values.email}</p>
           <p>{values.phone}</p>
         </div>
-        <div className="cv-general-picture-container padding-container">
-          <h1>picture</h1>
-        </div>
+      </div>
+      <div className="section-separator">
+        <h3>Educational Experience</h3>
       </div>
     </div>
   );

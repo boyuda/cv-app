@@ -3,10 +3,9 @@ import GeneralInformation from './GeneralInformation';
 import { GeneralInformationInputs } from './data';
 
 //Storing all of the form data in to an object.
-function FormTable({ values, onValuesChange }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //TODO:When submit button clicked transfer everything to the CVTable
+function FormTable({ values, onValuesChange, onFormSubmit }) {
+  const handleSubmit = () => {
+    onFormSubmit();
   };
 
   return (
