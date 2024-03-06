@@ -15,6 +15,7 @@ function App() {
     name: '',
     email: '',
     phone: '',
+    education: [],
   });
 
   //Each change in the input field we setting the values.

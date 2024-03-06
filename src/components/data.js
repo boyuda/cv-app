@@ -1,20 +1,21 @@
+import { v4 as uuidv4 } from 'uuid';
 export const GeneralInformationInputs = [
   {
-    id: 1,
+    id: uuidv4(),
     name: 'name',
     type: 'text',
     placeholder: 'First and Last Name',
     label: 'Name',
   },
   {
-    id: 2,
+    id: uuidv4(),
     name: 'email',
     type: 'text',
     placeholder: 'Email',
     label: 'Email',
   },
   {
-    id: 3,
+    id: uuidv4(),
     name: 'phone',
     type: 'text',
     placeholder: 'Phone',

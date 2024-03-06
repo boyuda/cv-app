@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import GeneralInformation from './GeneralInformation';
 import { GeneralInformationInputs } from './data';
 
 //Storing all of the form data in to an object.
 function FormTable({ values, onValuesChange, onFormSubmit }) {
+  //TODO: How Exactly does hit callback function work?
   const handleSubmit = () => {
     onFormSubmit();
   };
