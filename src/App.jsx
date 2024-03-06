@@ -56,11 +56,11 @@ function App() {
   };
 
   const handleDelete = (e) => {
-    //
+    //Receiving button id and according to it, filtering the education array
     const button = e.target;
     if (button.id >= 0) {
-      console.log(e.target);
-      //
+      const filteredArray = values.education.filter((_, i) => i !== +button.id);
+      setValues({ ...values, education: filteredArray });
     }
   };
 
