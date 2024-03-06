@@ -32,14 +32,16 @@ function App() {
     } else {
       setValues({ ...values, [name]: value });
     }
-    console.log(values);
+
+    //Work Experience
+    //TODO:
   };
 
   const handleSubmitButton = () => {
     setCvTableValues(values);
   };
 
-  const onAddMoreClick = (e) => {
+  const handleAddMoreClick = (e) => {
     const { name, value } = e.target;
     if (name === 'addEducation') {
       // Updating the state adding new education
@@ -53,6 +55,15 @@ function App() {
     }
   };
 
+  const handleDelete = (e) => {
+    //
+    const button = e.target;
+    if (button.id >= 0) {
+      console.log(e.target);
+      //
+    }
+  };
+
   return (
     <div className="container">
       <div>
@@ -60,7 +71,8 @@ function App() {
           values={values}
           onValuesChange={handleValueChange}
           onFormSubmit={handleSubmitButton}
-          onAddMoreClick={onAddMoreClick}
+          onAddMoreClick={handleAddMoreClick}
+          onDelete={handleDelete}
         />
       </div>
       <div>

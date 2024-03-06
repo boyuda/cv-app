@@ -4,7 +4,13 @@ import { GeneralInformationInputs } from './data';
 import { EducationalExperienceInputs } from './data';
 
 //Storing all of the form data in to an object.
-function FormTable({ values, onValuesChange, onFormSubmit, onAddMoreClick }) {
+function FormTable({
+  values,
+  onValuesChange,
+  onFormSubmit,
+  onAddMoreClick,
+  onDelete,
+}) {
   //TODO: How Exactly does hit callback function work?
   const handleSubmit = () => {
     onFormSubmit();
@@ -12,6 +18,10 @@ function FormTable({ values, onValuesChange, onFormSubmit, onAddMoreClick }) {
 
   const handleAddMore = (e) => {
     onAddMoreClick(e);
+  };
+
+  const handleDelete = (e) => {
+    onDelete(e);
   };
 
   return (
@@ -50,12 +60,21 @@ function FormTable({ values, onValuesChange, onFormSubmit, onAddMoreClick }) {
                   onChange={onValuesChange}
                 />
               ))}
+              {/* Button will be skipped on 1st item */}
+              {index > 0 ? (
+                <button id={index} onClick={handleDelete}>
+                  Delete
+                </button>
+              ) : null}
             </div>
           ))}
         </div>
         <button name="addEducation" onClick={handleAddMore}>
           Add more
         </button>
+      </div>
+      <div>
+        <h1 className="header-v1">Work Experience</h1>
       </div>
       <button onClick={handleSubmit}>Submit</button>
     </div>
