@@ -8,6 +8,7 @@ function App() {
     name: '',
     email: '',
     phone: '',
+    education: [{ school: '', studyTitle: '', studyStart: '', studyEnd: '' }],
   });
 
   //State for CV table. Once submitted button is clicked, we set cv table values using form input values
@@ -15,16 +16,41 @@ function App() {
     name: '',
     email: '',
     phone: '',
-    education: [],
+    education: [{ school: '', studyTitle: '', studyStart: '', studyEnd: '' }],
   });
 
-  //Each change in the input field we setting the values.
+  //We setting the value in each input field.
   const handleValueChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    //Education
+    if (name.includes('education')) {
+      const [, index, property] = name.split('.');
+      const updatedEducation = [...values.education];
+      updatedEducation[index][property] = value;
+      setValues({ ...values, education: updatedEducation });
+    } else {
+      setValues({ ...values, [name]: value });
+    }
+    console.log(values);
   };
 
   const handleSubmitButton = () => {
     setCvTableValues(values);
+  };
+
+  const onAddMoreClick = (e) => {
+    const { name, value } = e.target;
+    if (name === 'addEducation') {
+      // Updating the state adding new education
+      setValues({
+        ...values,
+        education: [
+          ...values.education,
+          { school: '', studyTitle: '', studyStart: '', studyEnd: '' },
+        ],
+      });
+    }
   };
 
   return (
@@ -34,6 +60,7 @@ function App() {
           values={values}
           onValuesChange={handleValueChange}
           onFormSubmit={handleSubmitButton}
+          onAddMoreClick={onAddMoreClick}
         />
       </div>
       <div>

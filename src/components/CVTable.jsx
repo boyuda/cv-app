@@ -1,6 +1,6 @@
 function CVTable({ values }) {
   return (
-    <div>
+    <div className="cv-container">
       <div className="cv-general-container">
         <div className="cv-general-picture-container padding-container">
           <h1>picture</h1>
