@@ -56,3 +56,19 @@
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
+.cv-education-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cv-education-date {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.cv-education-info {
+  /*  */
+  font-weight: 700;
+  font-size: 15px;
+}

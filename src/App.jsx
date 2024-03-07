@@ -38,6 +38,8 @@ function App() {
   };
 
   const handleSubmitButton = () => {
+    //TODO:WRITE LOGIC FOR CHECKING THE EMPTY STRINGS BEFORE SUBMITTING
+    console.log(values, cvTableValues);
     setCvTableValues(values);
   };
 

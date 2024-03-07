@@ -19,6 +19,22 @@ function CVTable({ values }) {
       <div className="section-separator">
         <h3>Educational Experience</h3>
       </div>
+      <div>
+        {values.education.map((e, index) => (
+          <div key={index} className="cv-education-container">
+            <div className="cv-education-date">
+              <p>
+                {e.studyStart} - {e.studyEnd}
+              </p>{' '}
+            </div>
+            <div className="cv-education-info">
+              <p>
+                {e.school} - {e.studyTitle}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
