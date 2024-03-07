@@ -1,6 +1,4 @@
-import '../styles/style.css';
-
-function GeneralInformation(props) {
+function PracticalExperience(props) {
   //Received props destructuring
   const { label, onChange, ...inputProps } = props;
 
@@ -13,4 +11,4 @@ function GeneralInformation(props) {
   );
 }
 
-export default GeneralInformation;
+export default PracticalExperience;

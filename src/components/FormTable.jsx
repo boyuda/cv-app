@@ -1,7 +1,9 @@
 import GeneralInformation from './GeneralInformation';
 import EducationalExperience from './EducationalExperience';
+import PracticalExperience from './PracticalExperience';
 import { GeneralInformationInputs } from './data';
 import { EducationalExperienceInputs } from './data';
+import { PracticalExperienceInputs } from './data';
 
 //Storing all of the form data in to an object.
 function FormTable({
@@ -75,6 +77,34 @@ function FormTable({
       </div>
       <div>
         <h1 className="header-v1">Work Experience</h1>
+        <div className="formDateInputTable">
+          {/* Loop through education to check how many array items exists in it */}
+          {values.work.map((work, index) => (
+            <div key={index}>
+              {PracticalExperienceInputs.map((input) => (
+                <PracticalExperience
+                  key={input.id}
+                  label={input.label}
+                  name={`work.${index}.${input.name}`}
+                  type={input.type}
+                  placeholder={input.placeholder}
+                  // Value applies to appropriate education array index
+                  value={work[input.name]}
+                  onChange={onValuesChange}
+                />
+              ))}
+              {/* Button will be skipped on 1st item */}
+              {index > 0 ? (
+                <button id={index} onClick={handleDelete}>
+                  Delete
+                </button>
+              ) : null}
+            </div>
+          ))}
+        </div>
+        <button name="addWork" onClick={handleAddMore}>
+          Add more
+        </button>
       </div>
       <button onClick={handleSubmit}>Submit</button>
     </div>

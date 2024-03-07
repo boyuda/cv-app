@@ -1,6 +1,6 @@
 function EducationalExperience(props) {
   //Received props destructuring
-  const { label, onChange, id, ...inputProps } = props;
+  const { label, onChange, ...inputProps } = props;
 
   return (
     <div className="formInput">

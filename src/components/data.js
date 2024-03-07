@@ -60,4 +60,46 @@ export const EducationalExperienceInputs = [
   },
 ];
 
+export const PracticalExperienceInputs = [
+  {
+    id: uuidv4(),
+    name: 'company',
+    type: 'text',
+    placeholder: 'Company Name',
+    label: 'Company',
+  },
+
+  {
+    id: uuidv4(),
+    name: 'positionTitle',
+    type: 'text',
+    placeholder: 'Position',
+    label: 'Position Title',
+  },
+
+  {
+    id: uuidv4(),
+    name: 'workStart',
+    type: 'date',
+    placeholder: 'Start Date',
+    label: 'Start Date',
+  },
+
+  {
+    id: uuidv4(),
+    name: 'workEnd',
+    type: 'date',
+    placeholder: 'End Date',
+    label: 'End Date',
+  },
+
+  {
+    id: uuidv4(),
+    name: 'responsibilities',
+    type: 'text',
+    placeholder: 'Responsibilities',
+    label: 'Responsibilities',
+  },
+];
+
 //PracticalExperience (company name, position title, responsibilities, from till)

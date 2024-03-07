@@ -35,6 +35,12 @@ function CVTable({ values }) {
           </div>
         ))}
       </div>
+      <div className="section-separator">
+        <h3>Work Experience</h3>
+      </div>
+      <div>
+        <p>{values.work[0].company}</p>
+      </div>
     </div>
   );
 }

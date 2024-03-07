@@ -9,6 +9,15 @@ function App() {
     email: '',
     phone: '',
     education: [{ school: '', studyTitle: '', studyStart: '', studyEnd: '' }],
+    work: [
+      {
+        company: '',
+        positionTitle: '',
+        workStart: '',
+        workEnd: '',
+        responsibilities: '',
+      },
+    ],
   });
 
   //State for CV table. Once submitted button is clicked, we set cv table values using form input values
@@ -17,11 +26,22 @@ function App() {
     email: '',
     phone: '',
     education: [{ school: '', studyTitle: '', studyStart: '', studyEnd: '' }],
+    work: [
+      {
+        company: '',
+        positionTitle: '',
+        workStart: '',
+        workEnd: '',
+        responsibilities: '',
+      },
+    ],
   });
 
   //We setting the value in each input field.
+  //TODO:REFACTOR
   const handleValueChange = (e) => {
     const { name, value } = e.target;
+    console.log(name);
 
     //Education
     if (name.includes('education')) {
@@ -29,17 +49,23 @@ function App() {
       const updatedEducation = [...values.education];
       updatedEducation[index][property] = value;
       setValues({ ...values, education: updatedEducation });
+    }
+    //Work
+    if (name.includes('work')) {
+      const [, index, property] = name.split('.');
+      const updatedWork = [...values.work];
+      updatedWork[index][property] = value;
+      setValues({ ...values, work: updatedWork });
     } else {
       setValues({ ...values, [name]: value });
     }
-
-    //Work Experience
-    //TODO:
   };
 
   const handleSubmitButton = () => {
     //TODO:WRITE LOGIC FOR CHECKING THE EMPTY STRINGS BEFORE SUBMITTING
-    console.log(values, cvTableValues);
+    //FIXME: Without cliking submit second time education experience still rerenders
+    ///For some reason after clicking on submit button, the value of cvTableValues
+    //keep updating each time we write something into the field
     setCvTableValues(values);
   };
 
