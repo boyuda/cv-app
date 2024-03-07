@@ -38,24 +38,14 @@ function App() {
   });
 
   //We setting the value in each input field.
-  //TODO:REFACTOR
   const handleValueChange = (e) => {
     const { name, value } = e.target;
-    console.log(name);
 
-    //Education
-    if (name.includes('education')) {
-      const [, index, property] = name.split('.');
-      const updatedEducation = [...values.education];
-      updatedEducation[index][property] = value;
-      setValues({ ...values, education: updatedEducation });
-    }
-    //Work
-    if (name.includes('work')) {
-      const [, index, property] = name.split('.');
-      const updatedWork = [...values.work];
-      updatedWork[index][property] = value;
-      setValues({ ...values, work: updatedWork });
+    if (name.includes('education') || name.includes('work')) {
+      const [field, index, property] = name.split('.');
+      const updatedArray = [...values[field]];
+      updatedArray[index][property] = value;
+      setValues({ ...values, field: updatedArray });
     } else {
       setValues({ ...values, [name]: value });
     }
