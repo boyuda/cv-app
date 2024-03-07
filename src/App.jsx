@@ -63,9 +63,15 @@ function App() {
 
   const handleSubmitButton = () => {
     //TODO:WRITE LOGIC FOR CHECKING THE EMPTY STRINGS BEFORE SUBMITTING
-    //FIXME: Without cliking submit second time education experience still rerenders
-    ///For some reason after clicking on submit button, the value of cvTableValues
-    //keep updating each time we write something into the field
+    //FIXME: if submit button is clicked at least once - it passes the values from values to cvtable values
+    //by this logic, even if i change the text in formtable.jsx, it should not change in cvtable.jsx
+    //for some reason this does not apply for education and work arrays in the cvtablevalues object.
+    //Things to note:
+    //1. cvtablevalues does not change at all if we do not click submit button
+    //2. After clicking submit button. cvtablevalues properties name email and phone stays the same and
+    // updates it self only when submit button clicked again, but education and work arrays keeps changing
+    // on each text change in formtable.jsx.
+    // this does not make sense since it should only be updated on submit button click.
     setCvTableValues(values);
   };
 
